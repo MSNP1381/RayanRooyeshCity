@@ -10,16 +10,16 @@
   <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
-  
+
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">
-        Inbox
+        شهر رایان رویش
       </ion-title>
     </ion-toolbar>
   </ion-header>
-  
+
   <ion-list>
-    <app-message *ngFor="let message of getMessages()" [message]="message"></app-message>
+    <app-message *ngFor="let section of getSections()" [section]="section"></app-message>
   </ion-list>
 </ion-content>

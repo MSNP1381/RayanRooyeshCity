@@ -1,83 +1,37 @@
 import { Injectable } from '@angular/core';
 
-export interface Message {
-  fromName: string;
-  subject: string;
-  date: string;
+export interface Inbox{
+  title: string;
   id: number;
-  read: boolean;
 }
 
+export interface Sections {
+  name: string;
+  id: number;
+}
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DataService {
-  public messages: Message[] = [
-    {
-      fromName: 'Matt Chorsey',
-      subject: 'New event: Trip to Vegas',
-      date: '9:32 AM',
-      id: 0,
-      read: false
-    },
-    {
-      fromName: 'Lauren Ruthford',
-      subject: 'Long time no chat',
-      date: '6:12 AM',
-      id: 1,
-      read: false
-    },
-    {
-      fromName: 'Jordan Firth',
-      subject: 'Report Results',
-      date: '4:55 AM',
-      id: 2,
-      read: false
-    },
-    {
-      fromName: 'Bill Thomas',
-      subject: 'The situation',
-      date: 'Yesterday',
-      id: 3,
-      read: false
-    },
-    {
-      fromName: 'Joanne Pollan',
-      subject: 'Updated invitation: Swim lessons',
-      date: 'Yesterday',
-      id: 4,
-      read: false
-    },
-    {
-      fromName: 'Andrea Cornerston',
-      subject: 'Last minute ask',
-      date: 'Yesterday',
-      id: 5,
-      read: false
-    },
-    {
-      fromName: 'Moe Chamont',
-      subject: 'Family Calendar - Version 1',
-      date: 'Last Week',
-      id: 6,
-      read: false
-    },
-    {
-      fromName: 'Kelly Richardson',
-      subject: 'Placeholder Headhots',
-      date: 'Last Week',
-      id: 7,
-      read: false
-    }
-  ];
 
-  constructor() { }
 
-  public getMessages(): Message[] {
-    return this.messages;
+  constructor() {}
+public getInboxes(id: number): Inbox[]{
+  return [{title:'اتللو',id:12},{title:'پنتاگو',id:12}];
+}
+
+  public getSections(): Sections[] {
+    return [
+
+{name:'اتللو و پنتاگو',id:1},
+{name:'بزنگاه و دکتر اکتشاف',id:2},
+{name:'هگز و دوز',id:3},
+{name:'کاردستی',id:4},
+{name:'سوالات ساده و متوسط',id:5},
+{name:'سوالات سخت و طلایی',id:6},
+{name:'تانگو و اریگامی',id:7},
+{name:'گیم',id:8},
+    ];
   }
 
-  public getMessageById(id: number): Message {
-    return this.messages[id];
-  }
 }
