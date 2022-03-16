@@ -1,6 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { Inbox } from '../services/data.service';
 import { ToastController } from '@ionic/angular';
+
 @Component({
   selector: 'app-in-box',
   templateUrl: './in-box.component.html',
