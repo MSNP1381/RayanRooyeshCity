@@ -1,18 +1,21 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-buttons slot="start">
+    <ion-buttons slot="end">
       <ion-back-button [text]="getBackButtonText()" defaultHref="/"></ion-back-button>
     </ion-buttons>
+    <ion-title>
+       صفحه ثبت
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" *ngIf="message">
 
 
-  <ion-item *ngFor="let section of message">
+  <div *ngFor="let section of message">
     <app-in-box [inBoxObj]="section"></app-in-box>
 
-  </ion-item>
+  </div>
 
 
 </ion-content>

@@ -34,10 +34,23 @@ export class InBoxComponent implements OnInit {
         else{
           this.presentToast('ثبت شد');
         }
-    });
+    },err=>{this.presentToast("خطایی رخداد")});
   }
   submitWin(){
+    var data:Transaction={
+      withdrawAmount:this.inBoxObj.win_amount,
+      actionId:this.inBoxObj.id,
+      team_id:this.winner,
+    }
 
+
+    this.dataService.submitGame(data).subscribe(data => {
+console.log(data);
+     if(data)
+          this.presentToast('ثبت شد');
+        
+    }
+    ,err=>this.presentToast("خطایی رخداد"));
   }
   async presentToast(message:string) {
     const toast = await this.toastController.create({

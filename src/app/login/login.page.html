@@ -7,12 +7,12 @@
 <ion-content>
 
   <ion-item>
-<ion-input placeholder="نام کاربری"></ion-input>
+<ion-input [(ngModel)]="username" placeholder="نام کاربری"></ion-input>
 
 </ion-item>
 <br/>
 <ion-item>
-<ion-input placeholder="رمز عبور"  type="password"></ion-input>
+<ion-input [(ngModel)]="password" placeholder="رمز عبور"  type="password"></ion-input>
 </ion-item>
 <hr>
 <ion-button (click)="submit()">ورود</ion-button>

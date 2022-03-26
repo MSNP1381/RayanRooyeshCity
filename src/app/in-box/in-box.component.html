@@ -4,23 +4,26 @@
   </ion-card-header>
 
   <ion-card-content>
-<ion-item>
+    <ion-item>
 
-      <ion-input clearInput placeholder="نفر اول" ></ion-input>
+      <ion-input clearInput [(ngModel)]="number1" type="number"  placeholder="نفر اول"></ion-input>
     </ion-item>
 
-      <br>
-<ion-item>
+    <br>
+    <ion-item *ngIf="inBoxObj.is_two">
 
-     <ion-input clearInput placeholder="نفر دوم"></ion-input>
-</ion-item>
-  <br>
-     <ion-button>ثبت</ion-button>
-      <hr>
-<ion-item>
+      <ion-input  clearInput [(ngModel)]="number2" type="number" placeholder="نفر دوم"></ion-input>
+    </ion-item>
+    <br>
+    <ion-button (click)="submitEnterance()">ثبت</ion-button>
+    <hr>
+    <ion-item>
 
-      <ion-input clearInput placeholder="برنده"></ion-input><br></ion-item>
-      <ion-button>ثبت</ion-button>
+      <ion-input clearInput [(ngModel)]="winner" type="number" placeholder="برنده"></ion-input><br>
+    </ion-item>
+        <br>
+
+    <ion-button (click)="submitWin()">ثبت</ion-button>
   </ion-card-content>
 </ion-card>
 

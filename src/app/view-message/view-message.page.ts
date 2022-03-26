@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Route,ActivatedRoute } from '@angular/router';
 import { DataService, Inbox } from '../services/data.service';
 
 @Component({
@@ -17,8 +17,9 @@ export class ViewMessagePage implements OnInit {
 
   ngOnInit() {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
-    this.message = this.data.getInboxes(parseInt(id, 10));
-  }
+     this.data.getInboxes(parseInt(id, 10)).subscribe(m=>{this.message=m});
+  
+    }
 
   getBackButtonText() {
     const win = window as any;
