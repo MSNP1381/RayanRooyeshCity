@@ -13,8 +13,9 @@ import { DataService, User } from '../services/data.service';
 export class LoginPage implements OnInit {
   username: string;
   password: string;
-  constructor(private data: DataService,private router1: Router,private toastController : ToastController)  {
-    if(localStorage.getItem("usertoken"))        this.router1.navigate(['home']);
+  constructor(private data: DataService,private router1: Router,private toastController: ToastController)  {
+    if(localStorage.getItem('usertoken'))
+    {this.router1.navigate(['home']);}
 
   }
 
@@ -22,21 +23,27 @@ export class LoginPage implements OnInit {
   }
   submit(){
 
-    var user:User={username:this.username, password:this.password}
-      this.data.login(user).subscribe(  
+    const user: User={username:this.username, password:this.password};
+      this.data.login(user).subscribe(
       res => {
-        console.log('HTTP response', res)
+        console.log('HTTP response', res);
+        this.isAdmin();
         localStorage.setItem('usertoken',res.access);
         this.router1.navigate(['home']);
         this.presentToast('ورود با موفقیت انجام شد');
       },
       err => {console.log('HTTP Error', err);
       this.presentToast('خطا در ورود');
-    })
+    });
   }
-  async presentToast(message:string) {
+  public isAdmin(){
+    const user: User={username:this.username, password:this.password};
+    this.data.login(user).subscribe(
+      res => localStorage.setItem('is_admin',res));
+  }
+  async presentToast(message: string) {
     const toast = await this.toastController.create({
-      message: message,
+      message,
       duration: 1000
     });
     toast.present();

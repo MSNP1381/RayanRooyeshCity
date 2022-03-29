@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="end">
+        <ion-back-button defaultHref="/adminpage"></ion-back-button>
+      </ion-buttons>
+    <ion-title>رنکینگ</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<!-- {{rankings|json}} -->
+  <!-- <table class="table striped">
+    <tr>
+      <th>#</th>
+      <th>ای دی تیم</th>
+      <th>مقدار</th>
+    </tr>
+    <tr *ngFor="let i of rankings">
+      <td>{{i.id}}</td>
+      <td>{{i.team_id}}</td>
+      <td>{{i.withdrawAmount}}</td>
+    </tr>
+</table> -->
+<ion-grid class="ion-margin">
+  <ion-row>
+    <ion-col>#</ion-col>
+    <ion-col>ای دی تیم</ion-col>
+  <ion-col>مقدار</ion-col>
+  </ion-row>
+  <ion-row *ngFor="let i of rankings">
+    <ion-col>{{i.id}}</ion-col>
+    <ion-col>{{i.team_id}}</ion-col>
+    <ion-col >{{i.withdrawAmount}}</ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>

@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="end">
+        <ion-back-button defaultHref="/adminpage"></ion-back-button>
+      </ion-buttons>
+    <ion-title>تراکنش ها به تفکیک تیم</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item>
+    <ion-input #input placeholder="ای دی تیم" type="number"></ion-input>
+    <ion-button type="submit" (click)="submit(input.value)">ثبت</ion-button>
+    </ion-item>
+   <span> <p style="text-align: center;">موجودی {{balance}}</p></span>
+
+  <!-- <table class="table table-striped" *ngIf="transactions">
+    <thead>
+    <tr>
+    <th>#</th>
+    <th>ای دی تیم</th>
+    <th>actionId</th>
+    <th>مقدار</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let i of transactions">
+    <td>{{i.id}}</td>
+    <td>{{i.team_id}}
+    <td>{{i.actionId|transactionId2Str}}</td>
+    <td style="direction:ltr">{{i.withdrawAmount}}</td>
+  </tr>
+  </tbody>
+  </table> -->
+  <ion-grid class="ion-margin">
+    <ion-row>
+      <ion-col>#</ion-col>
+    <ion-col>ای دی تیم</ion-col>
+    <ion-col>actionId</ion-col>
+    <ion-col>مقدار</ion-col>
+    </ion-row>
+    <ion-row *ngFor="let i of transactions">
+      <ion-col>{{i.id}}</ion-col>
+      <ion-col>{{i.team_id}}</ion-col>
+      <ion-col>{{i.actionId|transactionId2Str}}</ion-col>
+      <ion-col >{{i.withdrawAmount}}</ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>

@@ -10,12 +10,8 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" *ngIf="message">
-
-
   <div *ngFor="let section of message">
     <app-in-box [inBoxObj]="section"></app-in-box>
 
   </div>
-
-
 </ion-content>
