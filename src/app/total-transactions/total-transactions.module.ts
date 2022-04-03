@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { TotalTransactionsPageRoutingModule } from './total-transactions-routing.module';
 
 import { TotalTransactionsPage } from './total-transactions.page';
-import {TransactionId2StrPipe}from './custom.pipe'
+import {TransactionId2StrPipe}from './custom.pipe';
 
 @NgModule({
   imports: [

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -8,12 +9,18 @@ import { DataService } from '../services/data.service';
 })
 export class AdminpagePage implements OnInit {
 
-  constructor(private data: DataService) { }
+  constructor(private data: DataService,private router: Router) { }
 
   ngOnInit() {
   }
   getSections(){
     console.warn(this.data.getMessages());
     return this.data.getMessages();
+  }
+  logout(){
+    localStorage.removeItem('usertoken');
+    localStorage.removeItem('is_admin');
+
+   this. router.navigate(['login']);
   }
 }

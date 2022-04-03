@@ -17,6 +17,8 @@ export class HomePage {
   }
   logout(){
     localStorage.removeItem('usertoken');
+    localStorage.removeItem('is_admin');
+
    this. router.navigate(['login']);
   }
 

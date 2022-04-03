@@ -144,6 +144,6 @@ export class DataService {
     return this.http.get(this.baseUrl + 'transactions/' + team_id, httpOptions);
   }
   public is_admin(user: User): Observable<any>{
-    return this.http.post(this.baseUrl+'is_admin/',user);
+    return this.http.post(this.baseUrl+'is_admin',user);
   }
 }

@@ -7,7 +7,7 @@ import { DataService,Transactions } from '../services/data.service';
   styleUrls: ['./total-transactions.page.scss'],
 })
 export class TotalTransactionsPage implements OnInit {
-  private transactions: Transactions[];
+  public transactions: Transactions[];
   constructor(private data: DataService) { }
 
   ngOnInit() {

@@ -6,7 +6,7 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-// import{InBoxComponent} from './in-box/in-box.component';
+ import{TransactionId2StrPipe} from './total-transactions/custom.pipe';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
